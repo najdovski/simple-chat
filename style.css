@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: 
+  radial-gradient(black 3px, transparent 4px),
+  radial-gradient(black 3px, transparent 4px),
+  linear-gradient(#fff 4px, transparent 0),
+  linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+  linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+#fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+}
+
+#messages {
+  overflow: scroll;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+}
+
+#submit {
+  background-color: rgb(0, 131, 120);
+  color: white;
+}
+
+#fetchedMessages {
+  margin: 15px;
+  border-radius: 5px;
+  padding: 15px;
+  color: white;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.singleFetchedMessage {
+  margin: 10px;
+  background: rgba(255, 127, 80, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  --webkit-appearance: none;
+}
+
+#message {
+  flex: 2;
+}
