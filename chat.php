@@ -15,7 +15,7 @@ if ($message && $name) {
   $result["send_status"] = $db->query($sql);
 }
 
-$messages = $db->query("SELECT * FROM `chat` ORDER BY `timestamp` ASC");
+$messages = $db->query("SELECT * FROM `chat` ORDER BY `timestamp` DESC");
 
 while ($row = $messages->fetch_assoc()) {
   $result['messages'][] = $row;
