@@ -31,9 +31,9 @@ body {
 
 .singleFetchedMessage {
   margin: 10px;
-  background: #406ae0;
+  background: #0b36b0;
   padding: 20px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 form {
