@@ -11,7 +11,20 @@ $message = isset($_POST["message"]) ? $_POST["message"] : null;
 $name = isset($_POST["name"]) ? $_POST["name"] : null;
 
 if ($message && $name) {
-  $sql = "INSERT INTO `chat` (`message`, `name`) VALUES ('".$message."', '".$name."')";
+  if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+      $ip = $_SERVER['HTTP_CLIENT_IP'];
+  } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+  } else {
+      $ip = $_SERVER['REMOTE_ADDR'];
+  }
+
+  // For local testing purposes only, for example when the clients IP is "::1"
+  if (!filter_var($ip, FILTER_VALIDATE_IP) || $ip === '::1') {
+    $ip = file_get_contents('http://ipecho.net/plain');
+  }
+
+  $sql = "INSERT INTO `chat` (`message`, `name`, `ip`) VALUES ('".$message."', '".$name."', '".$ip."')";
   $result["send_status"] = $db->query($sql);
 }
 
